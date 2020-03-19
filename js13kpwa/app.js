@@ -22,7 +22,7 @@ for(var i=0; i<games.length; i++) {
 	entry = entry.replace('<a href=\'http:///\'></a>','-');
 	content += entry;
 };
-document.getElementById('content').innerHTML = content;
+//document.getElementById('content').innerHTML = content;
 
 // Registering Service Worker
 if('serviceWorker' in navigator) {
@@ -31,13 +31,13 @@ if('serviceWorker' in navigator) {
 
 // Requesting permission for Notifications after clicking on the button
 var button = document.getElementById("notifications");
-button.addEventListener('click', function(e) {
-	Notification.requestPermission().then(function(result) {
-		if(result === 'granted') {
-		//	randomNotification();
-		}
-	});
-});
+// button.addEventListener('click', function(e) {
+// 	Notification.requestPermission().then(function(result) {
+// 		if(result === 'granted') {
+// 		//	randomNotification();
+// 		}
+// 	});
+// });
 
 // Setting up random Notification
 function randomNotification(response) {

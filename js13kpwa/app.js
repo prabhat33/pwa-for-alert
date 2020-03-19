@@ -34,16 +34,18 @@ var button = document.getElementById("notifications");
 button.addEventListener('click', function(e) {
 	Notification.requestPermission().then(function(result) {
 		if(result === 'granted') {
-			randomNotification();
+		//	randomNotification();
 		}
 	});
 });
 
 // Setting up random Notification
-function randomNotification() {
+function randomNotification(response) {
+	console.log("the random responses");
+	console.log(response);
 	var randomItem = Math.floor(Math.random()*games.length);
-	var notifTitle = games[randomItem].name;
-	var notifBody = 'Created by '+games[randomItem].author+'.';
+	var notifTitle = response.name;
+	var notifBody = 'Stock name '+response.name+'.';
 	var notifImg = 'data/img/'+games[randomItem].slug+'.jpg';
 	var options = {
 		body: notifBody,
